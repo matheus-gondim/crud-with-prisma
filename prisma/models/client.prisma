@@ -1,0 +1,27 @@
+model Client {
+    id              Int           @id @default(autoincrement())
+    cpf             String        
+    cnpj    	    String        @unique()
+    name            String
+    cell            String
+    phone           String
+    email           String
+    clientType      ClientType
+    addressId       Int           @map("address_id")
+    createdAt       DateTime      @default(now()) @map("created_at")
+    updatedAt       DateTime      @updatedAt @map("updated_at")
+
+    address         Address       @relation(fields: [addressId], references: [id])     
+
+    @@map("clients")
+}
+
+enum ClientType {
+    PHYSICAL_PERSON
+    LEGAL_PERSON
+}
+
+model Address {
+    id          Int             @id @default(autoincrement()) 
+    clients     Client[]
+}

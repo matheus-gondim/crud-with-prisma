@@ -1,0 +1,33 @@
+{
+  "name": "crud-with-prisma",
+  "version": "1.0.0",
+  "author": "",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "scripts": {
+    "prismix": "npx prismix && prisma format",
+    "start": "nodemon --watch 'src/' --exec 'npx prismix && ts-node src/main/server.ts' -e ts",
+    "migration:create": "npm run prismix && npx prisma migrate dev --create-only --name",
+    "migration:run": "npx prisma migrate dev"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.23",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.11.1",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.11.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "prismix": "^1.0.21",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.6.0"
+  }
+}

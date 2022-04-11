@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"sourceMap": true,
+		"outDir": "./dist",
+		"strict": true,
+		"lib": [
+			"esnext", 
+			"es6",
+            "dom"
+		],
+		"esModuleInterop": true,
+		"target": "es5",
+        "types": ["reflect-metadata"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+		"strictPropertyInitialization": false,
+		"allowJs": true,
+		"downlevelIteration": true
+	}
+}
